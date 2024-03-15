@@ -69,7 +69,9 @@ contract DeFiStaking is Ownable {
 
     ///
     /// @dev block times are assumed to be 6 sec as defined in the problem
-    ///      which makes the reward to be (6/86_400)*(1/1_000) or 1/14_400_000
+    /// which makes the reward to be
+    /// (6/86_400)[sec for block/seconds in a day]*(1/1_000)[1 DEFI per 1000 DEFI]
+    /// or 1/14_400_000 per block per DEFI
     ///
     function _getRewards(address adr) internal view returns (uint256) {
         if (stakes[adr].length == 0 || stakeStartBlock[adr].length == 0) {
