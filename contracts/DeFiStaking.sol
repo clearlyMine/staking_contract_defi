@@ -63,14 +63,6 @@ contract DeFiStaking is Ownable {
         return _staked;
     }
 
-    function getTotal(address adr) external view returns (uint256) {
-        return _getTotal(adr);
-    }
-
-    function _getTotal(address adr) internal view returns (uint256) {
-        return _getTotalStaked(adr) + _getRewards(adr);
-    }
-
     function getRewards(address adr) external view returns (uint256) {
         return _getRewards(adr);
     }
