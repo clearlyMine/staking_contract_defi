@@ -23,8 +23,6 @@ contract DeFiStaking is Ownable {
         return token.balanceOf(address(this)) - totalStaked;
     }
 
-    uint8 decimals = 18;
-
     function stake(uint256 _amount) external {
         require(_amount > 0, "amount cannot be zero");
         token.safeTransferFrom(msg.sender, address(this), _amount);
